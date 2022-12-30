@@ -1,4 +1,7 @@
 class Contact:
+    #-----------------------------------------------------------------------
+    #        Constructor
+    #-----------------------------------------------------------------------
     def __init__(self,nom,prenom,adresse,email,telephone):
         self.nom = nom
         self.prenom = prenom
