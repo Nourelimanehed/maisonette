@@ -25,19 +25,17 @@ class Annonce:
     #-----------------------------------------------------------------------
     #        Methods
     #-----------------------------------------------------------------------
-    def ajouterAnnonce(self, fields):
-        try:
-            self.c.execute("INSERT INTO Annonce (categorie,type,surface,description,prix,id_user,id_localisation) VALUES (%s, %s, %s, %s,%s,%s,%s)",
-                       (fields[0].get(), fields[1].get(), fields[2].get(), fields[3].get(),fields[4].get(),fields[5].get(),fields[6].get()))
-        except:
-            pass
+    
 
     
-    def consulterAnnonce(self, id_Annonce):
+    def afficherDetailsAnnonce(self, id_Annonce):
         self.c.execute("SELECT * FROM Annonce WHERE id = %s", (id_Annonce, ))
+        return self.c.fetchone()
+    def consulterMessages(self, id_user):
+        # Consulter les messages d'un utilisateur
+        self.c.execute("SELECT * FROM Message WHERE id_destination = %s", (id_user, ))
         return self.c.fetchone()
 
    
 
-    def supprimerAnnonce(self, id_Annonce):
-        self.c.execute("DELETE FROM Annonce WHERE id = %s", (id_Annonce, ))
+    
