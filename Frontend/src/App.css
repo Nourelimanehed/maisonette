@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&family=Oswald:wght@600;700&display=swap'); 
+
+*{
+    margin: 0%;
+    padding: 0%;    
+    text-decoration: none;
+}
+
+button{
+    padding: 8px 16px;
+    margin: 6px 6px;
+    font-family: 'Dosis';
+    font-size: 18px;
+    font-weight: 500;
+    transition-duration: 0.4s;
+    border: 2px solid #5D70D5;
+    border-radius: 4px;
+}
+
+.light-btn{
+    background-color: #FFFFFF;  
+    color: #000; 
+}
+
+.light-btn:hover{
+    background-color:#5D70D5;
+    color:#FFFFFF ;
+}
+
+.dark-btn{
+    background-color: #5D70D5;
+    color: #FFFFFF;
+}
+
+.dark-btn:hover{
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+hr{
+    border-top: 2px solid  #6E7EDD;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1{
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 30px;
+    color: #5D70D5;
+    margin: 10px;
+}
+
+/** Header **********************************************************************/
+
+nav{
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Dosis';
+    font-size: 18px;
+    font-weight: 500;    
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    width: 100%;
+    display: inline;
+}
+
+li{
+    display: inline;
+    padding: 0.5% 0.5%;
+}
+
+#nav-part1{
+    margin-left:10px;
+}
+
+#nav-part2{
+    width: 60%;
+}
+
+#site-name{
+    font-family: 'Oswald'; 
+    font-size: 20px; 
+    color: #5D70D5;
+}
+
+#cnx-btn{
+    border-radius: 20px;
+}
+
+.nav-item {
+    font-size: 18px;
+    background-image: linear-gradient(
+      to right,
+      #5D70D5,
+      #5D70D5 50%,
+      #000 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 6px;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    
+}
+  
+.nav-item:before {
+    content: '';
+    background: #5D70D5;
+    display: block;
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+  
+.nav-item:hover {
+   background-position: 0;
+}
+  
+.nav-item:hover::before {
+    width:100%;
+}
+/** Header **********************************************************************/
+
+
+/** Home ************************************************************************/
+
+#back-ground-image{
+    width: 100%;
+}
+
+#home-back-ground-element-text{
+    color: #FFFFFF;
+    font-family: 'Oswald';  
+    font-size: 50px; 
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#search-field{
+    font-family: 'Dosis';
+    font-size: 25px;
+    padding: 16px;
+    width: 600px;
+    border-radius: 50px;
+    border: 2px solid #5D70D5;  
+}
+
+#search-field:placeholder-shown{
+    color: rgba(0, 0, 0, 0.5);   
+}
+
+#search-field:focus::placeholder {
+    color: transparent;
+}
+  
+#search-field:focus {
+    outline-color: #334EE1;
+}
+
+#search-btn{
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #5D70D5;
+    margin-left:-60px ;
+}
+
+#search-btn:hover{
+    border-radius: 50%;
+    background-color: #334EE1;
+}
+
+#search-bar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.filter{
+    width: 200px; 
+    height: 300px;
+    background: #FFFFFF;
+    border: 2px solid #5D70D5;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Dosis';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+    padding: 30px;  
+}
+
+.filter-title{
+    font-family: 'Dosis';
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+.filter-btn{
+    margin-top: -10px;
+    margin-left: 55%;
+}
+
+.date-field{
+  width: 100%;
+  font-family: 'Dosis';
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border: 2px solid #9EA9E6; 
+  border-radius: 4px;
+}
+
+.date-field:placeholder-shown{
+    color: rgba(0, 0, 0, 0.5);   
+}
+.date-field:focus::placeholder {
+    color: transparent;
+}
+  
+.date-field:focus {
+    outline-color: #5D70D5;
+}
+
+select{
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Dosis';
+    font-weight: 500;
+    font-size: 16px;
+    border: 2px solid #5D70D5;
+    border-radius: 4px;
+    padding: 10px 10px;
+}
+
+.filter-bar{
+    
+    position: absolute;
+    top: 10%;
+    left: 1%;
+   
+
+}
+
+.filter-bar-btn{
+    border-color: #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+}
+
+.filter-bar-btn:hover{
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+
+
+/*after selection color change*/
+
+/** Home ************************************************************************/
+
+/** Radio buttons **************************************************************/
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #5D70D5;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+/** Radio buttons **************************************************************/
+
+/** AddCube ********************************************************************/
+
+/** AddCube ********************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
