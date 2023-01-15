@@ -1,10 +1,32 @@
 import React from 'react'
+import "./../App.css"
 
-const AddCube = ()=> {
+import defaultImage from "./../graphics/defaultImage.png"
+import { Link } from "react-router-dom";
+
+
+const AddCube = ({title,price,area})=> {
+  
   return (
-    <div>
-        
-
+    <div className="add-cube-container">
+      
+      <Link to="/detailesAnnonce">
+        <img className="add-cube-img" src={defaultImage} id="back-ground-image" alt="not found"/>
+      </Link>
+      
+      <div className="add-cube-title">{title}</div>
+      <div className="add-cube-info">
+        <div>
+          <div>Prix: {price} DZ</div>
+          <div>Surface: {area} M2</div>
+        </div>
+        <div className="add-cube-location-icon">
+          <svg width="40" height="37" viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30.5 15.0312C30.5 24.2812 19.52 32.375 19.52 32.375C19.52 32.375 8.54004 24.2812 8.54004 15.0312C8.54004 9.25 13.42 4.625 19.52 4.625C25.62 4.625 30.5 9.25 30.5 15.0312Z" stroke="#5D70D5" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+            <path d="M19.5199 18.5C21.5412 18.5 23.1799 16.947 23.1799 15.0312C23.1799 13.1155 21.5412 11.5625 19.5199 11.5625C17.4985 11.5625 15.8599 13.1155 15.8599 15.0312C15.8599 16.947 17.4985 18.5 19.5199 18.5Z" stroke="#5D70D5" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+          </svg>
+        </div>   
+      </div>
     </div>
   )
 }
