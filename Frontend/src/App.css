@@ -40,8 +40,9 @@ button{
 
 hr{
     border-top: 2px solid  #6E7EDD;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
 }
 
 h1{
@@ -152,7 +153,7 @@ li{
     transform: translate(-50%, -50%);
 }
 
-#search-field{
+.search-field{
     font-family: 'Dosis';
     font-size: 25px;
     padding: 16px;
@@ -161,31 +162,31 @@ li{
     border: 2px solid #5D70D5;  
 }
 
-#search-field:placeholder-shown{
+.search-field:placeholder-shown{
     color: rgba(0, 0, 0, 0.5);   
 }
 
-#search-field:focus::placeholder {
+.search-field:focus::placeholder {
     color: transparent;
 }
   
-#search-field:focus {
+.search-field:focus {
     outline-color: #334EE1;
 }
 
-#search-btn{
+.search-btn{
     border-radius: 50%;
     padding: 10px;
     background-color: #5D70D5;
     margin-left:-60px ;
 }
 
-#search-btn:hover{
+.search-btn:hover{
     border-radius: 50%;
     background-color: #334EE1;
 }
 
-#search-bar{
+.search-bar{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -194,7 +195,6 @@ li{
   
 .filter{
     width: 200px; 
-    height: 300px;
     background: #FFFFFF;
     border: 2px solid #5D70D5;
     border-radius: 4px;
@@ -214,13 +214,13 @@ li{
 }
 
 .filter-btn{
-    margin-top: -10px;
-    margin-left: 55%;
+    margin-left: 25%;
 }
 
 .date-field{
   width: 100%;
   font-family: 'Dosis';
+  font-size: 16px;
   padding: 10px 10px;
   box-sizing: border-box;
   border: 2px solid #9EA9E6; 
@@ -240,22 +240,30 @@ li{
 
 select{
     width: 100%;
-    box-sizing: border-box;
+    outline: none;
+    border: transparent;
+}
+
+option{
+    padding: 5px;
     font-family: 'Dosis';
     font-weight: 500;
     font-size: 16px;
-    border: 2px solid #5D70D5;
-    border-radius: 4px;
-    padding: 10px 10px;
 }
 
+
+option:hover{
+    color: #FFFFFF;
+    background-color: #5D70D5;
+}
+
+
+
+
 .filter-bar{
-    
     position: absolute;
     top: 10%;
     left: 1%;
-   
-
 }
 
 .filter-bar-btn{
@@ -269,7 +277,16 @@ select{
     color: #000;
 }
 
+.dark-filter-bar-btn{
+    border-color: #5D70D5;
+    background: transparent;
+    color: #000;
+}
 
+.dark-filter-bar-btn:hover{
+    background-color: #5D70D5;
+    color: #FFFFFF;
+}
 
 /*after selection color change*/
 
@@ -289,7 +306,7 @@ select{
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
-    color: #666;
+    color: #000;
 }
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:before {
@@ -329,15 +346,187 @@ select{
 /** Radio buttons **************************************************************/
 
 /** AddCube ********************************************************************/
+.add-cube-container{
+    font-family: 'Dosis';
+    font-size: 16px;
+    color: #000;
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
+}
 
+.add-cube-img{
+   border-radius: 4px;
+   -webkit-transition: .3s ease-in-out;
+   transition: .3s ease-in-out;
+}
+
+.add-cube-img:hover{
+    -webkit-filter: blur(1px);
+	filter: blur(1px);
+    transform: scale(1.02);
+}
+
+.add-cube-title{
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #5D70D5;
+}
+
+.add-cube-info{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-cube-location-icon:hover{
+    transform: scale(1.2);
+}
 /** AddCube ********************************************************************/
 
+/** Adds  *********************************************************************/
+
+#filter-bar2{
+    position: absolute;
+    top: 28%;
+    left: 2%;
+}
+
+.adds-top-part{
+    padding: 20px;
+    padding-bottom: 0px;
+    display:flex;     
+}
+
+.adds-middle-part{
+    padding: 20px;
+    padding-top: 0px;
+    margin-bottom: 40px;
+}
+
+.adds-bottom-part{
+    display: flex;
+    padding: 20px;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+/** Adds  *********************************************************************/
+
+
+/** AddRectangle *************************************************************/
+.add-rectangle-container{
+    width: 60%;
+    height: auto;
+}
+.add-rectangle-top-part{
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+}
+.add-rectangle-date{
+    font-family: 'Dosis';
+    font-size: 18px;
+    font-weight: 300;
+    color: #000;
+
+}
+
+.add-rectangle-images-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-rectangle-images-cover{
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+
+
+.add-rectangle-images{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: auto;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.add-rectangle-image{
+    min-width: 100%;
+    height: 100%;
+    margin: 1px 10px;
+    cursor: pointer;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+.add-rectangle-images::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+}
+
+.sroll-btn{
+    background-color: transparent;
+    outline: none;
+    border: 2px solid #5D70D5;
+    border-radius: 100%;
+    cursor: pointer;
+    background: #FFFFFF;
+
+}
+
+.sroll-btn:hover{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/** AddRectangle *************************************************************/
+
+/** AddChat ******************************************************************/
+
+/** AddChat ******************************************************************/
+
+
+/** AddContentTable **********************************************************/
+
+/** AddContentTable **********************************************************/
+
+
+/** AddDetails ***************************************************************/
+.add-details-container{}
+
+.add-details-top-part{}
+
+.add-details-middle-part{}
+
+.add-details-bottom-part{}
+
+.add-title{
+    
+}
+
+.add-view{
+    display: flex;
+    justify-content: space-between;
+}
 
 
 
 
 
-
+/** AddDetails ***************************************************************/
 
 
 
