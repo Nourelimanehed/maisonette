@@ -1,15 +1,54 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from localisation.models import Localisation
-from categorie.models import Categorie
 from django.urls import reverse
 import os
 
 
 class Annonce(models.Model):
+
+    class Categorie(models.TextChoices):
+        
+        ('VENTE' ,'VENTE'),
+        ('ECHANGE' ,'ECHANGE'),
+        ('LOCATION' , 'LOCATION'),
+        ('LOCATION_VACANCES' , 'LOCATION VACANCES'),
+        
+
+    class Localisation (models.TextChoices):
+        ('1',"Adrar"),
+        ('2',"Chlef"),
+        ('3',"Laghouat"),
+        ('4',"Oum El Bouaghi"),
+        ('5',"Batna"),
+        ('6',"Bejaia"),
+        ('7',"Biskra"),
+    ''' 
+    "Bechar",
+    "Blida",
+    "Bouira",
+     "Tamanrasset",
+    "Tebessa",
+    "Tlemcen",
+     "Tiaret",
+    "Tizi Ouzou",
+     "Alger",
+     "Djelfa",
+     "Jijel",
+    "Setif",
+    "Saida",
+     "Skikda",
+     "Sidi Bel Abbes","Annaba","Guelma","Constantine","Medea","Mostaganem","M'sila","Mascara","Ouargla",
+    "Oran","El Baydah","Illizi","Bordj Bou Arreridj", "Boumerdes","El Taref","Tindouf","Tissemslit","El Oued","Khenchela",
+    "Souk Ahras","Tipaza","Mila","Ain Defla","Naama", "Ain Temouchent","Ghardaia","Relizane","Timimoun","Bordj Baji Mokhtar","Ouled Djellal",
+    "Beni Abbes","In Salah","In Guezzam","Touggourt","Djanet","El M'Ghair","El Meniaa",'''
+    #-------------------------------------------
     titre_Annonce = models.CharField(max_length=300)
-    categorie_Annonce = models.ForeignKey(Categorie, on_delete=models.CASCADE)
+    categorie_Annonce = models.CharField(
+        max_length = 100,
+        choices = Categorie,
+        default = 'LOCATION'
+        )
     type_Annonce = models.CharField(max_length=50)
     surface_Annonce = models.IntegerField(null = True)
     description_Annonce = models.TextField()
@@ -17,10 +56,14 @@ class Annonce(models.Model):
     date_Annonce = models.DateTimeField(default=timezone.now)
     #file = models.FileField(null=True,blank=True,upload_to='Files')
     user_Annonce = models.ForeignKey(User, on_delete=models.CASCADE)
-    localisation_Annonce = models.ForeignKey(Localisation, on_delete=models.CASCADE)
+    localisation_Annonce = models.CharField(
+        max_length= 100,
+        choices= Localisation,
+        default= 'Alger'
+        )
     images_Annonce = models.FilePathField(path="/img")
 
-    objects = AnnonceManager()
+    '''objects = AnnonceManager()
 
     class Meta:
         ordering = ['-datetime']
@@ -53,5 +96,5 @@ class AnnonceManager(models.Manager):
     def get_queryset(self, *args, **kwargs):
         return AnnonceQuerySet(self.model, using=self._db)
 
-    
+    '''
 
