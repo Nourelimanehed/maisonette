@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Annonce details</title>
+   </head>
+ 
+   <body>
+      <ul>
+         {% for annonce in list_annonce %}
+      
+         <h3> annonce : </h3>
+         <li>{{annonce.titre_Annonce}}</li>
+         <li>{{annonce.date_Annonce}}</li>
+         {% endfor %}
+      </ul>
+      
+
+   </body>
+   
+</html>

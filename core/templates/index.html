@@ -1,0 +1,10 @@
+{% if latest_annonce_list %}
+    <ul>
+    {% for annonce in latest_annonce_list %}
+        <li><a href="/core/models/{{ annonce.id }}/">{{ annonce.titre_Annonce }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No annonce are available.</p>
+{% endif %}
+
