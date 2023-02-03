@@ -6,6 +6,7 @@
     python -m pip install --upgrade pip
     pip install django
     pip install django-allauth
+    pip install selenium -> for tests
 3. Navigate to amisonette folder to run the server :
     cd maisonette
     python manage.py runserver
