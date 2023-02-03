@@ -6,6 +6,7 @@ from .models.models import Annonce
 from .models.localisation import Localisation
 from .models.category import Category
 from .models.type import Type
+from .models.offre import Offre
 from django.forms import ModelForm
 
 '''class UpdateProfileForm(forms.ModelForm):
@@ -35,3 +36,9 @@ class ImageForm(ModelForm):
     class Meta:
         model = Images
         fields = ('image', )
+
+
+class OffreForm(ModelForm):
+    class Meta:
+        model = Offre
+        fields = ('body',)

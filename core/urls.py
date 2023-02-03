@@ -4,8 +4,9 @@ from . import views
 
 urlpatterns = [
    
-path('annonces/search/',views.show_annonce_detail,name="details"),
-path('annonces/',views.ajout_Annonce , name = 'ajouter'),
+path('annonces/index/',views.show_annonces,name="index"),
+path('annonces/ajout/',views.ajout_Annonce , name = 'ajouter'),
+path('annonces/search/<int:annonce_id>/ajoutOffre/',views.ajout_Offre , name = 'ajouterOffre'),
 path('annonces/search/<int:annonce_id>',views.consulterAnnonce,name="details"),
 #path('profile/', profile, name='users-profile'),
 ]

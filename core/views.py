@@ -3,7 +3,8 @@ from django.shortcuts import render, get_list_or_404
 # Create your views here.
 from django.http import HttpResponse
 from .models.models import Annonce , Profile,Images
-from .forms import AjoutAnnonceForm, AjoutLocalisationForm, ImageForm
+from .models.offre import Offre
+from .forms import AjoutAnnonceForm, AjoutLocalisationForm, ImageForm, OffreForm
 #from .forms import UpdateProfileForm
 from django.forms import modelformset_factory
 from django.contrib.auth.decorators import login_required
@@ -16,16 +17,17 @@ from django.http import HttpResponseRedirect
     return render(request, 'core/index.html', {'annonce': annonce})
 from .models import Book, Author, BookInstance, Genre'''
 
-def show_annonce_detail(request) :
+def show_annonces(request) :
     list_annonce = Annonce.objects.all().order_by('-date_Annonce')
     context = {'list_annonce': list_annonce}
 
     return render(request,"annonce_details.html", context)
 def consulterAnnonce(request,annonce_id) :
     annonce = Annonce.objects.get(pk=annonce_id)
-    context = {'annonce':annonce}
+    #context = {'annonce':annonce}
+    offres = Offre.objects.filter(annonce = annonce_id).values()
 
-    return render(request,"consulterAnnonce.html", context)
+    return render(request,"consulterAnnonce.html", {'annonce':annonce, 'offres': offres,})
 '''@login_required
  def profile(request):
     if request.method == 'POST':
@@ -65,7 +67,7 @@ def ajout_Annonce(request):
             # use django messages framework
             messages.success(request,
                              "Yeeew, check it out on the home page!")
-            return HttpResponseRedirect("core/annonces/search/")
+            return HttpResponseRedirect("core/annonces/search")
         else:
             print(AjoutAnnonceForm.errors, formset.errors)
     else:
@@ -74,3 +76,25 @@ def ajout_Annonce(request):
     return render(request, 'ajouterAnnonce.html',
                   {'ajout_Annonce_form': ajout_Annonce_form, 'formset': formset})
     
+
+def ajout_Offre(request, annonce_id):
+    annonce = Annonce.objects.get(pk=annonce_id)
+    new_offre = None
+    if request.method == 'POST':
+        # An offer was posted
+        offre_form = OffreForm(request.POST)
+        if offre_form.is_valid():
+            new_offre = offre_form.save(commit=False)
+            new_offre.annonce = annonce
+            # Save the offre to the database
+            new_offre.save()
+        return HttpResponseRedirect('annonces/search/<int:annonce_id>')
+    else:
+        offre_form = OffreForm()
+    return render(request,
+                  'ajouterOffre.html',
+                  {
+                    'annonce_id':annonce_id,
+                    'annonce' : annonce,
+                    'new_offre' : new_offre,
+                   'offre_form': offre_form})

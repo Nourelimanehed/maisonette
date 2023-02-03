@@ -18,6 +18,13 @@
         <li>{{annonce.localisation_Annonce.zip}}</li>
         <li>{{annonce.type_Annonce.name}}</li>
         <li>{{annonce.category_Annonce.name}}</li>
+        <li> {{</li>
+      </ul>
+      <ul>
+         <h3> Offres Annonces</h3>
+         {% for offre in offres %}
+        <li>{{ offre.body }} </li>
+         {% endfor %}
       </ul>
 
    </body>
