@@ -5,7 +5,7 @@ from .models.category import Category
 from .models.localisation import Localisation
 from .models.type import Type
 from .models.offre import Offre
-from .models.models import Annonce , Images , Profile
+from .models.models import Annonce , Images , Profile , AnnonceManager
 
 admin.site.register(Category)
 admin.site.register(Localisation)
