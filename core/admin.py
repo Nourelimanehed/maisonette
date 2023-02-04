@@ -5,12 +5,13 @@ from .models.category import Category
 from .models.localisation import Localisation
 from .models.type import Type
 from .models.offre import Offre
-from .models.models import Annonce , Images
+from .models.models import Annonce , Images , Profile
 
 admin.site.register(Category)
 admin.site.register(Localisation)
 admin.site.register(Type)
 admin.site.register(Images)
+admin.site.register(Profile)
 @admin.register(Annonce)
 class AnnonceAdmin(admin.ModelAdmin):
     list_filter = ('type_Annonce','category_Annonce','date_Annonce','prix_Annonce')
