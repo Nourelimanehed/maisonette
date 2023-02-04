@@ -16,6 +16,10 @@ admin.site.register(Profile)
 class AnnonceAdmin(admin.ModelAdmin):
     list_filter = ('type_Annonce','category_Annonce','date_Annonce','prix_Annonce')
     
+@admin.register(AnnonceManager)
+class AnnonceManagerAdmin(admin.ModelAdmin):
+    list_filter = ('titre_Annonce','type_Annonce','wilaya_Annonce','commune_Annonce','periode_Annonce')
+    
 @admin.register(Offre)
 class OffreAdmin(admin.ModelAdmin):
     list_display = ('annonce','body', 'created')
