@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Offre </title>
+   </head>
+   <body>
+    <ul>
+        
+        <form id="offre_form" method="post" action=" {% url 'details' annonce_id %}" enctype="multipart/form-data">
+            <ul>Annonce : {{annonce.titre_Annonce}}</ul>
+        
+            {% csrf_token %}
+            
+            {% for field in offre_form %}
+                {{ field }} <br />
+            {% endfor %}
+        
+           
+        
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+    </ul>
+</body>
+</html>

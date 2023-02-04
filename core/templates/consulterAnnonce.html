@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Annonce details</title>
+   </head>
+ 
+   <body>
+      <ul>
+         <h3> annonce : </h3>
+         <li>{{annonce.titre_Annonce}}</li>
+         <li>{{annonce.date_Annonce}}</li>
+         <li>{{annonce.description_Annonce}}</li>
+         <li>{{annonce.prix_Annonce}}</li>
+         <li>{{annonce.surface_Annonce}}</li>
+        <li>{{annonce.localisation_Annonce.adresse}}</li>
+        <li>{{annonce.localisation_Annonce.commune}}</li>
+        <li>{{annonce.localisation_Annonce.wilaya}}</li>
+        <li>{{annonce.localisation_Annonce.zip}}</li>
+        <li>{{annonce.type_Annonce.name}}</li>
+        <li>{{annonce.category_Annonce.name}}</li>
+        <li> {{</li>
+      </ul>
+      <ul>
+         <h3> Offres Annonces</h3>
+         {% for offre in offres %}
+        <li>{{ offre.body }} </li>
+         {% endfor %}
+      </ul>
+
+   </body>
+   
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Annonce details</title>
+   </head>
+   <body>
+    <ul>
+        <form id="ajout_Annonce_form" method="post" action=" {% url 'index' %}" enctype="multipart/form-data">
+        
+            {% csrf_token %}
+            
+            {% for field in ajout_Annonce_form %}
+                {{ field }} <br />
+            {% endfor %}
+        
+            {{ formset.management_form }}
+            {% for form in formset %}
+                {{ form }}
+            {% endfor %}
+        
+        
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+    </ul>
+</body>
+</html>

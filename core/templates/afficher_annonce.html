@@ -1,0 +1,23 @@
+!DOCTYPE html>
+<html>
+   <head>
+      <title>Annonces</title>
+   </head>
+ 
+   <body>
+      <ul>
+         {% for annonce in list_annonce %}
+      
+         <h3> annonce : </h3>
+         <li>{{annonce_manager.titre_Annonce}}</li>
+         <li>{{annonce_manager.type_Annonce}}</li>
+         <li>{{annonce_manager.commune_Annonce}}</li>
+         <li>{{annonce_manager.wilaya_Annonce}}</li>
+        <li>{{annonce_manager.periode_Annonce}}</li>
+         {% endfor %}
+      </ul>
+      
+
+   </body>
+   
+</html>
