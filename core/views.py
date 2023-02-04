@@ -41,7 +41,7 @@ def consulterAnnonce(request,annonce_id) :
     else:
         profile_form = UpdateProfileForm(instance=request.user.profile)
 
-    return render(request, 'users/profile.html', { 'profile_form': profile_form})
+    return render(request, 'updateprofile.html', { 'profile_form': profile_form})
 #----------------------------------------------
 
 def ajout_Annonce(request):
