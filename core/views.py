@@ -118,5 +118,5 @@ def afficherPropreanc(request) :
     current_user = request.user
     if request.user.is_authenticated :
         annonce_id = current_user.id
-        ancobj = AnnonceManager.objects.raw('select * from liste_annonce where type="'+annonce_id+'" ')
+        ancobj = AnnonceManager.objects.raw('select * from liste_annonce where type_Annonce="'+annonce_id+'" ')
         return render(request,'afficher_annonce.html',{"AnnonceManager":ancobj})
