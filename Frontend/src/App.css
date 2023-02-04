@@ -18,31 +18,29 @@ button{
     border-radius: 4px;
 }
 
-.light-btn{
+.light-btn, .offer-btn{
     background-color: #FFFFFF;  
     color: #000; 
 }
 
-.light-btn:hover{
+.light-btn:hover, .offer-btn:hover{
     background-color:#5D70D5;
     color:#FFFFFF ;
 }
 
-.dark-btn{
+.dark-btn, .form-btn{
     background-color: #5D70D5;
     color: #FFFFFF;
 }
 
-.dark-btn:hover{
+.dark-btn:hover, .form-btn:hover{
     background-color: #FFFFFF;
     color: #000;
 }
 
 hr{
     border-top: 2px solid  #6E7EDD;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
+    margin: 10px;
 }
 
 h1{
@@ -53,6 +51,11 @@ h1{
     margin: 10px;
 }
 
+label{
+    font-family: 'Dosis';
+    font-weight: 400;
+    font-size: 18px;
+}
 /** Header **********************************************************************/
 
 nav{
@@ -60,7 +63,7 @@ nav{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Dosis';
     font-size: 18px;
-    font-weight: 500;    
+    font-weight: 500;  
 }
 
 .flex-container{
@@ -108,6 +111,8 @@ li{
     background-position: -100%;
     display: inline-block;
     padding: 6px;
+    margin-top: 8px;
+    line-height: 22px;
     position: relative;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -134,6 +139,8 @@ li{
 .nav-item:hover::before {
     width:100%;
 }
+
+
 /** Header **********************************************************************/
 
 
@@ -217,7 +224,7 @@ li{
     margin-left: 25%;
 }
 
-.date-field{
+.date-field, .msg-field{
   width: 100%;
   font-family: 'Dosis';
   font-size: 16px;
@@ -227,14 +234,14 @@ li{
   border-radius: 4px;
 }
 
-.date-field:placeholder-shown{
+.date-field:placeholder-shown, .msg-field:placeholder-shown{
     color: rgba(0, 0, 0, 0.5);   
 }
-.date-field:focus::placeholder {
+.date-field:focus::placeholder, .msg-field:focus::placeholder{
     color: transparent;
 }
   
-.date-field:focus {
+.date-field:focus, .msg-field:focus {
     outline-color: #5D70D5;
 }
 
@@ -423,44 +430,34 @@ option:hover{
     width: 60%;
     height: auto;
 }
+
 .add-rectangle-top-part{
     display: flex;
     justify-content: space-between;
-    padding: 6px;
 }
+
 .add-rectangle-date{
     font-family: 'Dosis';
     font-size: 18px;
     font-weight: 300;
     color: #000;
-
+    padding: 10px;
 }
 
-.add-rectangle-images-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.add-rectangle-images-cover{
-    position: relative;
-    width: 100%;
-    height: 50%;
-}
-
-
-.add-rectangle-images{
-    width: 100%;
-    height: auto;
+.add-rectangle-images,.new-adds{
+    padding: 20px;
     display: flex;
     justify-content: left;
     align-items: center;
     overflow: auto;
-    position: relative;
     scroll-behavior: smooth;
 }
 
-.add-rectangle-image{
+.add-rectangle-images::-webkit-scrollbar, .new-adds::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+
+.add-rectangle-image, .new-adds-cube{
     min-width: 100%;
     height: 100%;
     margin: 1px 10px;
@@ -469,47 +466,184 @@ option:hover{
     overflow: hidden;
 }
 
-.add-rectangle-images::-webkit-scrollbar{
-    -webkit-appearance: none;
-}
-
 .image{
     width: 100%;
-    height: 100%;
+    height: 450px;
 }
 
 .sroll-btn{
     background-color: transparent;
-    outline: none;
-    border: 2px solid #5D70D5;
-    border-radius: 100%;
+    border: none;
     cursor: pointer;
-    background: #FFFFFF;
-
 }
 
-.sroll-btn:hover{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+#next-scroll-btn{
+    position: absolute;
+    top: 75%;
+    left: 55%;
+    transform: translate(-50%, -50%);
 }
+
+
+#previous-scroll-btn{
+    position: absolute;
+    top: 75%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+}
+
 
 /** AddRectangle *************************************************************/
 
+/** AddChatOffers ************************************************************/
+.add-chat-container{
+    position: absolute;
+    left: 65%;
+    top: 37%;
+    width: 30% ;
+    height: 450px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.add-chat-top{
+    font-family: 'Dosis';
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    color: #5D70D5;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.add-chat-middle{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10%;
+    overflow: auto;
+    height: 45%;
+   
+}
+
+.add-chat-bottom{
+    display: flex;
+    justify-content: center;
+}
+.offer-btn{
+      
+}
+/** AddChatOffers ************************************************************/
+/** AddChat ******************************************************************/
+.add-chat-text-msg{
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.msg-field{
+    width: 90%;
+    border-radius: 50px;
+}
+
+.add-chat-btn{
+    border: none;
+    border-radius: 100%;
+    width: 40px;
+    height: 35px;
+    background-color: #FFFFFF;
+    margin-left: -45px;
+    padding: 5px;
+}
+
+.add-chat-btn:hover{
+    transform: scale(1.1);
+}
 /** AddChat ******************************************************************/
 
-/** AddChat ******************************************************************/
+/** AddChatBox ***************************************************************/
+.add-chat-box{
+    font-family: 'Dosis';
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
+.add-chat-box-info{
+    display: flex;
+    gap: 20px;
+}
+
+.add-chat-box-name{
+font-weight: 500;
+}
+
+.add-chat-box-date{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.add-chat-box-line{
+    border: 1px solid #C0C7EF;
+}
+/** AddChatBox ***************************************************************/
 
 /** AddContentTable **********************************************************/
+.add-content-table-first-line{
+    font-family: 'Dosis';
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+}
+
+.add-content-table-second-line{
+    font-family: 'Dosis';
+    font-weight: 600;
+    font-size: 25px; 
+    text-align: center;
+    color: #000;
+}
+
+th{
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+}
+
+td{
+    padding: 50px;
+    border: 1px solid #FFFFFF;
+}
+
+table{
+    width: 1100px;
+    background-color:#D9D9D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
+    border-collapse: collapse;
+}
+
 
 /** AddContentTable **********************************************************/
 
 
 /** AddDetails ***************************************************************/
-.add-details-container{}
+.add-details-container{
+   padding: 30px;
+}
 
 .add-details-top-part{}
 
 .add-details-middle-part{}
+
+.add-info-table{
+    display: flex;
+    justify-content: center;
+}
 
 .add-details-bottom-part{}
 
@@ -519,10 +653,26 @@ option:hover{
 
 .add-view{
     display: flex;
-    justify-content: space-between;
+    gap: 8%;
 }
 
+p{
+    margin-left:70px ;
+    font-family: 'Dosis';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000;
+}
 
+h2{
+    margin-left: 70px;
+    font-family: 'Dosis';
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 50px;
+    color: #000;
+}
 
 
 
@@ -531,5 +681,241 @@ option:hover{
 
 
 
+/** Home page New Adds Part *************************************************/
+.home-page-new-adds{
+    display:flex;
+    justify-content: space-between;    
+}
+
+.new-adds{
+    width: 95%;
+}
+
+.new-adds-cube{
+    min-width: 23%;
+}
+
+.home-page-sroll-btn{
+    border: none;
+    background-color: #FFFFFF;
+}
+
+#voir-plus{
+    font-family: 'Dosis';
+    font-size: 18px;
+    text-decoration-line: underline;
+    color: #5D70D5;
+    position: absolute;
+    top: 150%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+}
+/** Home page New Adds Part *************************************************/
+
+/** Account ****************************************************************/
+.account-page{
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+
+}
+
+.account-cercle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #5D70D5;
+    display: flex;
+}
+
+.name-letters{
+    width: 100%;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 65px;
+    text-align: center;
+    padding: 20px;
+    color: #FFFFFF;
+}
+
+.account-info{
+    width: 85%;
+    
+}
+
+.account-info-line{
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.info{
+    width: 90%;
+    font-family: 'Dosis';
+    font-size: 20px;
+    align-items: center;
+}
+
+#icon-hebelni{
+    margin-left: -5px;
+}
+
+.account-info-fields{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.account-info-field{
+    width: 45%;
+    margin: 0;
+}
+
+/** Account ****************************************************************/
 
 
+
+/*.add-chat-middle::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+.add-chat-middle::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+.add-chat-middle::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 20px;
+  }*/
+
+
+
+
+
+.log-in-card{
+    position: absolute;
+    top: 15%;
+    left:95%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+}
+
+.progressbar {
+    width: 90%;
+    height: 10px;
+    margin-bottom: 50px;
+   justify-content: center;
+  }
+
+.progressbar div {
+    width: 33.3%;
+    height: 100%;
+    background-color: #5D70D5;
+}
+
+/*Froms*/
+.form-father{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.form-container{
+    width: 80%;
+    height: auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #5D70D5;
+    border-radius: 10px;
+}
+
+.form-title{
+    text-align: center;
+    font-family: 'Dosis';
+    font-weight: 500;
+    font-size: 40px;
+    color: #5D70D5;
+}
+
+.form-content{
+    display: flex;
+    justify-content: center;
+    padding: 10px ;
+}
+
+.form-btns{
+    display: flex;
+    justify-content: center;
+}
+
+.form-btn{
+    width: 10%;
+}
+
+.Step-Container{
+    width: 90%;   
+}
+
+.form-2-field{
+    display: flex;
+    gap: 30px;
+}
+
+.form-field{
+    width: 100%;
+}
+
+.form-1-field{
+    width: 190%;
+}
+
+.form-select-field{
+    width: 100%;
+    outline:1px solid #5D70D5;
+    height: 55px;
+    border-radius: 4px;
+}
+
+.form-image-container{
+    width: 100%;
+    height: 200px;
+    border: 1px solid #5D70D5;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.add-image-label{
+    color:#FFFFFF;
+    height: 60px;
+    width: 250px;
+    background-color: #5D70D5;
+    border-radius: 4px;
+    border: 1px solid #5D70D5;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-image-label:hover{
+    color:#5D70D5;
+    background-color:#FFFFFF ;
+}
+
+
+
+
+
+/*******/  
