@@ -81,10 +81,4 @@ class AnnonceManager (models.Model) :
     class Meta :
         db_table = "liste_annonce_deposé"
 
-#----------------------------------------------
-class Offre(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    message = models.TextField()
 
-    def __str__(self):
-        return self.user.username
