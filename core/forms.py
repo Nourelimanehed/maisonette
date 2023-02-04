@@ -9,12 +9,13 @@ from .models.type import Type
 from django.forms import ModelForm
 
 class UpdateProfileForm(forms.ModelForm):
+    avatar = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control-file'}))
     adresse = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 5}))
     numero = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 5}))
 
     class Meta:
         model = Profile
-        fields = [ 'adresse', 'numero']
+        fields = [ 'avatar','adresse', 'numero']
 
 #----------------------------------------------
 class AjoutAnnonceForm(ModelForm):
