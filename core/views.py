@@ -106,7 +106,7 @@ def rechercheranc(request) :
         wilaya_Annonce= request.POST.get('Wilaya')
         commune_Annonce= request.POST.get('Commune')
         periode_Annonce= request.POST.get('Periode')
-        ancsearchobj = AnnonceManager.objects.raw('select * from liste_annonce where type="'+type_Annonce+'" and wilaya="'+wilaya_Annonce+'" and commune="'+commune_Annonce+'" and periode="'+periode_Annonce+'" ')
+        ancsearchobj = AnnonceManager.objects.raw('select * from liste_annonce where type_Annonce="'+type_Annonce+'" and wilaya_Annonce="'+wilaya_Annonce+'" and commune_Annonce="'+commune_Annonce+'" and periode_Annonce="'+periode_Annonce+'" ')
         return render(request,'afficher_annonce.html',{"AnnonceManager":ancsearchobj})
     else :
         ancobj = AnnonceManager.objects.raw('select * from liste_annonce')
