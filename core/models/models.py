@@ -2,9 +2,10 @@ from django.db import models
 from .category import Category
 from .localisation import Localisation
 from .type import Type
-from django.utils import timezone
+from django.utils import timezone 
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+
 class Annonce(models.Model):
     titre_Annonce = models.CharField(max_length=300)
     type_Annonce = models.ForeignKey(Type,on_delete=models.CASCADE )
@@ -61,10 +62,29 @@ class Images(models.Model):
 
 
 class Profile(models.Model):
-    #user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
     adresse = models.TextField()
     nemuro = models.TextField()
+
+    def __str__(self):
+        return self.user.username
+    
+#----------------------------------------------
+class AnnonceManager (models.Model) :
+    annonce_id = models.ForeignKey(Annonce,on_delete=models.CASCADE, default=None)
+    titre_Annonce = models.CharField(max_length=300)
+    type_Annonce = models.ForeignKey(Type,on_delete=models.CASCADE )
+    wilaya_Annonce=models.CharField(max_length=100)
+    commune_Annonce=models.CharField(max_length=100)
+    periode_Annonce=models.CharField(max_length=100)
+    class Meta :
+        db_table = "liste_annonce_deposé"
+
+#----------------------------------------------
+class Offre(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    message = models.TextField()
 
     def __str__(self):
         return self.user.username
