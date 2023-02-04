@@ -1,11 +1,26 @@
 
 
-import AddDetails from "./AddDetails";
+import AddChat from "./AddChat";
+import AddChatBox from "./AddChatBox";
+import AddChatOffers from "./AddChatOffers";
+import Account from "./Account";
+import AccountEditForm from "./AccountEditForm";
+import AddDetails from "./AddDetails"
+import Card from "./Card";
+
+
+
 
 const Help = () => {
     
-    
-    return <h1><AddDetails title="Le titre de l'annonce"/></h1>;
+ 
+    return (
+      <div>
+      <AddDetails/>
+      </div>
+
+    );
   };
   
   export default Help;
+  

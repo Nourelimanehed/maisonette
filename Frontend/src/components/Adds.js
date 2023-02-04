@@ -14,7 +14,7 @@ const Help = () => {
       </div>
       
       <div className = "adds-middle-part">
-        <hr style={{margin:"10px"}}/>
+        <hr/>
         <FilterBar2/>
       </div>
       

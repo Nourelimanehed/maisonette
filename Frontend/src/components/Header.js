@@ -1,8 +1,60 @@
-import React from 'react'
-import { Outlet, Link } from "react-router-dom";
+import { Login } from '@mui/icons-material';
+import { color, fontSize, fontWeight } from '@mui/system';
+
+
+
+
+
+
+
+
+import React, { useState } from 'react'
+import { Outlet, Link, NavLink } from "react-router-dom";
+import Card from './Card';
+
+var x,y=false;
+
+export {x,y};
+
+
+
+
 
 
 const Header = () => {
+    
+    
+    const navLinkStyles = ({isActive}) => {
+        if (isActive) {
+            return{
+
+                fontWeight: 'bold',
+            }
+            
+        }
+    }
+
+    const [isLogedIn, setIsLogedIn] = useState(false);
+    
+    const fan = () => {
+       return y = true;
+    }
+    
+
+
+    const [showCard,setShowCard] = useState(false);
+    
+    const login = () => {
+        setIsLogedIn(true);
+    }
+    
+    const showHideCard = () => {
+        setShowCard(!showCard);
+    }
+    
+   
+
+   
     return(
     <>
       <nav>
@@ -31,29 +83,36 @@ const Header = () => {
                     <Link id="site-name" to="/">MaiSonaite</Link> 
                 </li>
                 <li>
-                    <button className="light-btn">Déposer annonce</button>
+                    <Link id="nav-item"to="/monforme">
+                        <button className="light-btn" to="/form">Déposer annonce</button>
+                    </Link>
+                    
                 </li>
             </ul>
             
             <ul id="nav-part2">
                 <li>
-                    <Link className="nav-item" to="/aide">Aide</Link>
+                    <NavLink className="nav-item" to="/aide" style={navLinkStyles}>Aide</NavLink>
                 </li>
                 <li>
-                    <Link className="nav-item"  to="/annonces">Annonces</Link>
+                    <NavLink className="nav-item"  to="/annonces" style={navLinkStyles}>Annonces</NavLink>
                 </li>
                 <li>
-                    <Link className="nav-item"  to="/mesOffres">Mes Offres</Link>
+                    <NavLink className="nav-item"  to="/mesOffres" style={navLinkStyles}>Mes Offres</NavLink>
                 </li>
                 <li>
-                    <Link className="nav-item"  to="/mesAnnonces">Mes Annonces</Link>
+                    <NavLink className="nav-item"  to="/mesAnnonces" style={navLinkStyles}>Mes Annonces</NavLink>
                 </li>
                 <li>
-                    <button className="dark-btn" id="cnx-btn">Connexion</button>
+                    
+                    {!isLogedIn && <button className="dark-btn" id="cnx-btn" onClick={showHideCard}>Connexion</button>}
+                    {isLogedIn && <NavLink className="nav-item"  to="/monCompte" style={navLinkStyles}>Mon Compte</NavLink>}
+                
                 </li>
             </ul>
         </div>
       </nav>
+      {showCard && <Card/>}
       <Outlet />
     </> 
     );
