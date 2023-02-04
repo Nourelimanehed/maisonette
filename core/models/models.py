@@ -65,7 +65,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
     adresse = models.TextField()
-    nemuro = models.TextField()
+    numero = models.TextField()
 
     def __str__(self):
         return self.user.username
@@ -79,6 +79,6 @@ class AnnonceManager (models.Model) :
     commune_Annonce=models.CharField(max_length=100)
     periode_Annonce=models.CharField(max_length=100)
     class Meta :
-        db_table = "liste_annonce_deposé"
+        db_table = "liste_annonce_depose"
 
 
