@@ -1,0 +1,921 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&family=Oswald:wght@600;700&display=swap'); 
+
+*{
+    margin: 0%;
+    padding: 0%;    
+    text-decoration: none;
+}
+
+button{
+    padding: 8px 16px;
+    margin: 6px 6px;
+    font-family: 'Dosis';
+    font-size: 18px;
+    font-weight: 500;
+    transition-duration: 0.4s;
+    border: 2px solid #5D70D5;
+    border-radius: 4px;
+}
+
+.light-btn, .offer-btn{
+    background-color: #FFFFFF;  
+    color: #000; 
+}
+
+.light-btn:hover, .offer-btn:hover{
+    background-color:#5D70D5;
+    color:#FFFFFF ;
+}
+
+.dark-btn, .form-btn{
+    background-color: #5D70D5;
+    color: #FFFFFF;
+}
+
+.dark-btn:hover, .form-btn:hover{
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+hr{
+    border-top: 2px solid  #6E7EDD;
+    margin: 10px;
+}
+
+h1{
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 30px;
+    color: #5D70D5;
+    margin: 10px;
+}
+
+label{
+    font-family: 'Dosis';
+    font-weight: 400;
+    font-size: 18px;
+}
+/** Header **********************************************************************/
+
+nav{
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Dosis';
+    font-size: 18px;
+    font-weight: 500;  
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    width: 100%;
+    display: inline;
+}
+
+li{
+    display: inline;
+    padding: 0.5% 0.5%;
+}
+
+#nav-part1{
+    margin-left:10px;
+}
+
+#nav-part2{
+    width: 60%;
+}
+
+#site-name{
+    font-family: 'Oswald'; 
+    font-size: 20px; 
+    color: #5D70D5;
+}
+
+#cnx-btn{
+    border-radius: 20px;
+}
+
+.nav-item {
+    font-size: 18px;
+    background-image: linear-gradient(
+      to right,
+      #5D70D5,
+      #5D70D5 50%,
+      #000 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 6px;
+    margin-top: 8px;
+    line-height: 22px;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    
+}
+  
+.nav-item:before {
+    content: '';
+    background: #5D70D5;
+    display: block;
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+  
+.nav-item:hover {
+   background-position: 0;
+}
+  
+.nav-item:hover::before {
+    width:100%;
+}
+
+
+/** Header **********************************************************************/
+
+
+/** Home ************************************************************************/
+
+#back-ground-image{
+    width: 100%;
+}
+
+#home-back-ground-element-text{
+    color: #FFFFFF;
+    font-family: 'Oswald';  
+    font-size: 50px; 
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search-field{
+    font-family: 'Dosis';
+    font-size: 25px;
+    padding: 16px;
+    width: 600px;
+    border-radius: 50px;
+    border: 2px solid #5D70D5;  
+}
+
+.search-field:placeholder-shown{
+    color: rgba(0, 0, 0, 0.5);   
+}
+
+.search-field:focus::placeholder {
+    color: transparent;
+}
+  
+.search-field:focus {
+    outline-color: #334EE1;
+}
+
+.search-btn{
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #5D70D5;
+    margin-left:-60px ;
+}
+
+.search-btn:hover{
+    border-radius: 50%;
+    background-color: #334EE1;
+}
+
+.search-bar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.filter{
+    width: 200px; 
+    background: #FFFFFF;
+    border: 2px solid #5D70D5;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Dosis';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+    padding: 30px;  
+}
+
+.filter-title{
+    font-family: 'Dosis';
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+.filter-btn{
+    margin-left: 25%;
+}
+
+.date-field, .msg-field{
+  width: 100%;
+  font-family: 'Dosis';
+  font-size: 16px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border: 2px solid #9EA9E6; 
+  border-radius: 4px;
+}
+
+.date-field:placeholder-shown, .msg-field:placeholder-shown{
+    color: rgba(0, 0, 0, 0.5);   
+}
+.date-field:focus::placeholder, .msg-field:focus::placeholder{
+    color: transparent;
+}
+  
+.date-field:focus, .msg-field:focus {
+    outline-color: #5D70D5;
+}
+
+select{
+    width: 100%;
+    outline: none;
+    border: transparent;
+}
+
+option{
+    padding: 5px;
+    font-family: 'Dosis';
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+option:hover{
+    color: #FFFFFF;
+    background-color: #5D70D5;
+}
+
+
+
+
+.filter-bar{
+    position: absolute;
+    top: 10%;
+    left: 1%;
+}
+
+.filter-bar-btn{
+    border-color: #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+}
+
+.filter-bar-btn:hover{
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+.dark-filter-bar-btn{
+    border-color: #5D70D5;
+    background: transparent;
+    color: #000;
+}
+
+.dark-filter-bar-btn:hover{
+    background-color: #5D70D5;
+    color: #FFFFFF;
+}
+
+/*after selection color change*/
+
+/** Home ************************************************************************/
+
+/** Radio buttons **************************************************************/
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #000;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #5D70D5;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+/** Radio buttons **************************************************************/
+
+/** AddCube ********************************************************************/
+.add-cube-container{
+    font-family: 'Dosis';
+    font-size: 16px;
+    color: #000;
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
+}
+
+.add-cube-img{
+   border-radius: 4px;
+   -webkit-transition: .3s ease-in-out;
+   transition: .3s ease-in-out;
+}
+
+.add-cube-img:hover{
+    -webkit-filter: blur(1px);
+	filter: blur(1px);
+    transform: scale(1.02);
+}
+
+.add-cube-title{
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #5D70D5;
+}
+
+.add-cube-info{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-cube-location-icon:hover{
+    transform: scale(1.2);
+}
+/** AddCube ********************************************************************/
+
+/** Adds  *********************************************************************/
+
+#filter-bar2{
+    position: absolute;
+    top: 28%;
+    left: 2%;
+}
+
+.adds-top-part{
+    padding: 20px;
+    padding-bottom: 0px;
+    display:flex;     
+}
+
+.adds-middle-part{
+    padding: 20px;
+    padding-top: 0px;
+    margin-bottom: 40px;
+}
+
+.adds-bottom-part{
+    display: flex;
+    padding: 20px;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+/** Adds  *********************************************************************/
+
+
+/** AddRectangle *************************************************************/
+.add-rectangle-container{
+    width: 60%;
+    height: auto;
+}
+
+.add-rectangle-top-part{
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-rectangle-date{
+    font-family: 'Dosis';
+    font-size: 18px;
+    font-weight: 300;
+    color: #000;
+    padding: 10px;
+}
+
+.add-rectangle-images,.new-adds{
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.add-rectangle-images::-webkit-scrollbar, .new-adds::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+
+.add-rectangle-image, .new-adds-cube{
+    min-width: 100%;
+    height: 100%;
+    margin: 1px 10px;
+    cursor: pointer;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+.image{
+    width: 100%;
+    height: 450px;
+}
+
+.sroll-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#next-scroll-btn{
+    position: absolute;
+    top: 75%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+
+#previous-scroll-btn{
+    position: absolute;
+    top: 75%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+}
+
+
+/** AddRectangle *************************************************************/
+
+/** AddChatOffers ************************************************************/
+.add-chat-container{
+    position: absolute;
+    left: 65%;
+    top: 37%;
+    width: 30% ;
+    height: 450px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.add-chat-top{
+    font-family: 'Dosis';
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    color: #5D70D5;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.add-chat-middle{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10%;
+    overflow: auto;
+    height: 45%;
+   
+}
+
+.add-chat-bottom{
+    display: flex;
+    justify-content: center;
+}
+.offer-btn{
+      
+}
+/** AddChatOffers ************************************************************/
+/** AddChat ******************************************************************/
+.add-chat-text-msg{
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.msg-field{
+    width: 90%;
+    border-radius: 50px;
+}
+
+.add-chat-btn{
+    border: none;
+    border-radius: 100%;
+    width: 40px;
+    height: 35px;
+    background-color: #FFFFFF;
+    margin-left: -45px;
+    padding: 5px;
+}
+
+.add-chat-btn:hover{
+    transform: scale(1.1);
+}
+/** AddChat ******************************************************************/
+
+/** AddChatBox ***************************************************************/
+.add-chat-box{
+    font-family: 'Dosis';
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.add-chat-box-info{
+    display: flex;
+    gap: 20px;
+}
+
+.add-chat-box-name{
+font-weight: 500;
+}
+
+.add-chat-box-date{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.add-chat-box-line{
+    border: 1px solid #C0C7EF;
+}
+/** AddChatBox ***************************************************************/
+
+/** AddContentTable **********************************************************/
+.add-content-table-first-line{
+    font-family: 'Dosis';
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+}
+
+.add-content-table-second-line{
+    font-family: 'Dosis';
+    font-weight: 600;
+    font-size: 25px; 
+    text-align: center;
+    color: #000;
+}
+
+th{
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+}
+
+td{
+    padding: 50px;
+    border: 1px solid #FFFFFF;
+}
+
+table{
+    width: 1100px;
+    background-color:#D9D9D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
+    border-collapse: collapse;
+}
+
+
+/** AddContentTable **********************************************************/
+
+
+/** AddDetails ***************************************************************/
+.add-details-container{
+   padding: 30px;
+}
+
+.add-details-top-part{}
+
+.add-details-middle-part{}
+
+.add-info-table{
+    display: flex;
+    justify-content: center;
+}
+
+.add-details-bottom-part{}
+
+.add-title{
+    
+}
+
+.add-view{
+    display: flex;
+    gap: 8%;
+}
+
+p{
+    margin-left:70px ;
+    font-family: 'Dosis';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000;
+}
+
+h2{
+    margin-left: 70px;
+    font-family: 'Dosis';
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 50px;
+    color: #000;
+}
+
+
+
+/** AddDetails ***************************************************************/
+
+
+
+
+/** Home page New Adds Part *************************************************/
+.home-page-new-adds{
+    display:flex;
+    justify-content: space-between;    
+}
+
+.new-adds{
+    width: 95%;
+}
+
+.new-adds-cube{
+    min-width: 23%;
+}
+
+.home-page-sroll-btn{
+    border: none;
+    background-color: #FFFFFF;
+}
+
+#voir-plus{
+    font-family: 'Dosis';
+    font-size: 18px;
+    text-decoration-line: underline;
+    color: #5D70D5;
+    position: absolute;
+    top: 150%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+}
+/** Home page New Adds Part *************************************************/
+
+/** Account ****************************************************************/
+.account-page{
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+
+}
+
+.account-cercle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #5D70D5;
+    display: flex;
+}
+
+.name-letters{
+    width: 100%;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 65px;
+    text-align: center;
+    padding: 20px;
+    color: #FFFFFF;
+}
+
+.account-info{
+    width: 85%;
+    
+}
+
+.account-info-line{
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.info{
+    width: 90%;
+    font-family: 'Dosis';
+    font-size: 20px;
+    align-items: center;
+}
+
+#icon-hebelni{
+    margin-left: -5px;
+}
+
+.account-info-fields{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.account-info-field{
+    width: 45%;
+    margin: 0;
+}
+
+/** Account ****************************************************************/
+
+
+
+/*.add-chat-middle::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+.add-chat-middle::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+.add-chat-middle::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 20px;
+  }*/
+
+
+
+
+
+.log-in-card{
+    position: absolute;
+    top: 15%;
+    left:95%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+}
+
+.progressbar {
+    width: 90%;
+    height: 10px;
+    margin-bottom: 50px;
+   justify-content: center;
+  }
+
+.progressbar div {
+    width: 33.3%;
+    height: 100%;
+    background-color: #5D70D5;
+}
+
+/*Froms*/
+.form-father{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.form-container{
+    width: 80%;
+    height: auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #5D70D5;
+    border-radius: 10px;
+}
+
+.form-title{
+    text-align: center;
+    font-family: 'Dosis';
+    font-weight: 500;
+    font-size: 40px;
+    color: #5D70D5;
+}
+
+.form-content{
+    display: flex;
+    justify-content: center;
+    padding: 10px ;
+}
+
+.form-btns{
+    display: flex;
+    justify-content: center;
+}
+
+.form-btn{
+    width: 10%;
+}
+
+.Step-Container{
+    width: 90%;   
+}
+
+.form-2-field{
+    display: flex;
+    gap: 30px;
+}
+
+.form-field{
+    width: 100%;
+}
+
+.form-1-field{
+    width: 190%;
+}
+
+.form-select-field{
+    width: 100%;
+    outline:1px solid #5D70D5;
+    height: 55px;
+    border-radius: 4px;
+}
+
+.form-image-container{
+    width: 100%;
+    height: 200px;
+    border: 1px solid #5D70D5;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.add-image-label{
+    color:#FFFFFF;
+    height: 60px;
+    width: 250px;
+    background-color: #5D70D5;
+    border-radius: 4px;
+    border: 1px solid #5D70D5;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-image-label:hover{
+    color:#5D70D5;
+    background-color:#FFFFFF ;
+}
+
+
+
+
+
+/*******/  
