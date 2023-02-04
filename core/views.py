@@ -2,10 +2,9 @@ from django.shortcuts import render, get_list_or_404
 
 # Create your views here.
 from django.http import HttpResponse
-from .models.models import Annonce , Profile,Images
+from .models.models import Annonce , Profile,Images , AnnonceManager
 from .models.offre import Offre
-from .forms import AjoutAnnonceForm, AjoutLocalisationForm, ImageForm, OffreForm
-#from .forms import UpdateProfileForm
+from .forms import AjoutAnnonceForm, AjoutLocalisationForm, ImageForm, OffreForm ,UpdateProfileForm
 from django.forms import modelformset_factory
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -22,13 +21,15 @@ def show_annonces(request) :
     context = {'list_annonce': list_annonce}
 
     return render(request,"annonce_details.html", context)
+#----------------------------------------------
 def consulterAnnonce(request,annonce_id) :
     annonce = Annonce.objects.get(pk=annonce_id)
     #context = {'annonce':annonce}
     offres = Offre.objects.filter(annonce = annonce_id).values()
 
     return render(request,"consulterAnnonce.html", {'annonce':annonce, 'offres': offres,})
-'''@login_required
+#----------------------------------------------
+@login_required
  def profile(request):
     if request.method == 'POST':
         profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
@@ -41,7 +42,7 @@ def consulterAnnonce(request,annonce_id) :
         profile_form = UpdateProfileForm(instance=request.user.profile)
 
     return render(request, 'users/profile.html', { 'profile_form': profile_form})
-'''
+#----------------------------------------------
 
 def ajout_Annonce(request):
     ImageFormSet = modelformset_factory(Images,
@@ -75,7 +76,7 @@ def ajout_Annonce(request):
         formset = ImageFormSet(queryset=Images.objects.none())
     return render(request, 'ajouterAnnonce.html',
                   {'ajout_Annonce_form': ajout_Annonce_form, 'formset': formset})
-    
+#----------------------------------------------
 
 def ajout_Offre(request, annonce_id):
     annonce = Annonce.objects.get(pk=annonce_id)
@@ -98,3 +99,24 @@ def ajout_Offre(request, annonce_id):
                     'annonce' : annonce,
                     'new_offre' : new_offre,
                    'offre_form': offre_form})
+#----------------------------------------------
+def rechercheranc(request) :
+    if request.method=='POST':
+        type_Annnonce= request.POST.get('Type')
+        wilaya_Annonce= request.POST.get('Wilaya')
+        commune_Annonce= request.POST.get('Commune')
+        periode_Annonce= request.POST.get('Periode')
+        ancsearchobj = AnnonceManager.objects.raw('select * from liste_annonce where type="'+type_Annonce+'" and wilaya="'+wilaya_Annonce+'" and commune="'+commune_Annonce+'" and periode="'+periode_Annonce+'" ')
+        return render(request,'afficher_annonce.html',{"AnnonceManager":ancsearchobj})
+    else :
+        ancobj = AnnonceManager.objects.raw('select * from liste_annonce')
+        return render(request,'afficher_annonce.html',{"AnnonceManager":ancobj})
+  
+#----------------------------------------------
+
+def afficherPropreanc(request) :
+    current_user = request.user
+    if request.user.is_authenticated :
+        annonce_id = current_user.id
+        ancobj = AnnonceManager.objects.raw('select * from liste_annonce where type="'+annonce_id+'" ')
+        return render(request,'afficher_annonce.html',{"AnnonceManager":ancobj})
