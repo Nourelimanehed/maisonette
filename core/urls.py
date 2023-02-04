@@ -10,6 +10,6 @@ path('annonces/search/<int:annonce_id>/ajoutOffre/',views.ajout_Offre , name = '
 path('annonces/search/<int:annonce_id>',views.consulterAnnonce,name="details"),
 path('profile/', profile, name='users-profile'),
 path('annonces/filtrer/',views.rechercheranc , name = 'filtrer'),
-path('annonces/affich/',views.afficherPropreanc , name = 'afficher_propre_anc'),
+path('annonces/affiche/',views.afficherPropreanc , name = 'afficher_propre_anc'),
 
 ]
