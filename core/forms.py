@@ -16,18 +16,18 @@ class UpdateProfileForm(forms.ModelForm):
         model = Profile
         fields = [ 'adresse', 'numero']
 
-
+#----------------------------------------------
 class AjoutAnnonceForm(ModelForm):
     class Meta :
         model = Annonce
         fields = ['titre_Annonce','description_Annonce','localisation_Annonce','type_Annonce','category_Annonce','surface_Annonce','prix_Annonce']
-
+#----------------------------------------------
 class AjoutLocalisationForm(ModelForm):
     class Meta :
         model = Localisation
         fields = '__all__'
 
- 
+ #----------------------------------------------
  
 class ImageForm(ModelForm):
     image = forms.ImageField(label='Image')    
@@ -35,7 +35,7 @@ class ImageForm(ModelForm):
         model = Images
         fields = ('image', )
         
-
+#----------------------------------------------
 class OffreForm(ModelForm):
     class Meta:
         model = Offre
